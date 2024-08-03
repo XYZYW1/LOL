@@ -27,11 +27,20 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 section {
     padding: 20px;
     margin: 20px 0;
+}
+
+.section {
+    display: none;
+}
+
+#home {
+    display: block; /* Show Home section by default */
 }
 
 .gallery {
