@@ -1,87 +1,78 @@
-// Sample questions for the quiz
-const quizData = [
-    {
-        question: "What is her favorite color?",
-        choices: ["Red", "Blue", "Green", "Yellow"],
-        answer: "Blue"
-    },
-    {
-        question: "Where was our first date?",
-        choices: ["Restaurant", "Movie Theater", "Park", "Beach"],
-        answer: "Restaurant"
-    },
-    {
-        question: "What is his favorite movie?",
-        choices: ["Inception", "The Matrix", "The Shawshank Redemption", "The Godfather"],
-        answer: "Inception"
-    },
-    {
-        question: "What is her favorite food?",
-        choices: ["Pizza", "Sushi", "Pasta", "Burgers"],
-        answer: "Sushi"
-    },
-    {
-        question: "Which city would she love to visit?",
-        choices: ["Paris", "Tokyo", "New York", "Sydney"],
-        answer: "Tokyo"
-    },
-    {
-        question: "What is his favorite hobby?",
-        choices: ["Reading", "Gaming", "Cooking", "Traveling"],
-        answer: "Gaming"
-    },
-    {
-        question: "What is her favorite season?",
-        choices: ["Spring", "Summer", "Autumn", "Winter"],
-        answer: "Autumn"
-    },
-    {
-        question: "What is his favorite sport?",
-        choices: ["Football", "Basketball", "Tennis", "Soccer"],
-        answer: "Basketball"
-    },
-    {
-        question: "What is her favorite book?",
-        choices: ["Pride and Prejudice", "1984", "To Kill a Mockingbird", "The Great Gatsby"],
-        answer: "Pride and Prejudice"
-    },
-    {
-        question: "What is his favorite ice cream flavor?",
-        choices: ["Vanilla", "Chocolate", "Strawberry", "Mint Chocolate Chip"],
-        answer: "Mint Chocolate Chip"
-    }
-];
-
-let currentQuestionIndex = 0;
-
-function displayQuestion() {
-    const questionElement = document.getElementById('question');
-    const choicesElement = document.getElementById('choices');
-
-    questionElement.textContent = quizData[currentQuestionIndex].question;
-    choicesElement.innerHTML = '';
-
-    quizData[currentQuestionIndex].choices.forEach(choice => {
-        const button = document.createElement('button');
-        button.textContent = choice;
-        button.onclick = () => checkAnswer(choice);
-        choicesElement.appendChild(button);
-    });
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
-function checkAnswer(selectedChoice) {
-    const isCorrect = selectedChoice === quizData[currentQuestionIndex].answer;
-    alert(isCorrect ? 'Correct!' : 'Wrong!');
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 
-function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        displayQuestion();
-    } else {
-        alert('Quiz finished! Great job!');
-    }
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-// Initialize the quiz
-displayQuestion();
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    margin: 10px;
+    max-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.music-player {
+    margin: 20px 0;
+}
+
+#notes-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.note {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.quiz-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
